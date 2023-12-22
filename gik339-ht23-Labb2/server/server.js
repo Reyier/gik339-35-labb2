@@ -33,4 +33,18 @@ server.listen(port, () => {
 
 
 // Uppgift 4 Testa Backend 
-// Uppgift 5
+// Uppgift 5 
+
+
+
+// test för Content security policy
+const app = express();
+
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src http://localhost:5000;");
+  next();
+});
+
+app.listen(5000, () => {
+  console.log('Server is running on port 5000');
+});
