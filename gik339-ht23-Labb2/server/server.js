@@ -26,7 +26,7 @@ server.get("/users", (req, res) => {
   });
 });
 
-const port = 5000;
+const port = 3000;
 server.listen(port, () => {
   console.log(`Server is listening on http://localhost:${port}`);
 });
@@ -38,13 +38,3 @@ server.listen(port, () => {
 
 
 // test för Content security policy
-const app = express();
-
-app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src http://localhost:5000;");
-  next();
-});
-
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
-});
