@@ -1,3 +1,4 @@
+//npm init -y, npm install express
 // uppgift 2 punkt 1. Importerar Express och SQLite-moduler
 const express = require("express");
 
